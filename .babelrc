@@ -1,0 +1,45 @@
+{
+  "presets": [
+    // "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "modules": false, // ESM에서 cjs로 모듈이 바뀌는 것을 방지할 수 있습니다.
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic" // JSX가 변환하는 함수를 가져온다 | classic 아무것도 자동으로 가져오지 않는다.
+      }
+    ],
+    "@babel/preset-typescript"
+  ]
+}
+// {
+//   "presets": [
+//     [
+//       "@babel/preset-env", // 폴리필을 처리하는 방법을 구성
+//       {
+//         "modules": false // ESM에서 cjs로 모듈이 바뀌는 것을 방지할 수 있다.
+//       }
+//     ],
+//     [
+//       "@babel/preset-react",
+//       {
+//         "runtime": "automatic" // JSX가 변환하는 함수를 가져온다 | classic 아무것도 자동으로 가져오지 않는다.
+//       }
+//     ]
+//   ]
+// }
+/* 
+Tree shaking 
+사용하지 않는 라이브러리들의 코드와 export를 판단해 Dead Code를 없애는 트리쉐이킹을 위해 개발 환경 단에서
+설정 하는 부분 core.js 와 useBuiltIns 모듈 설정부분은 7.4.0에서 더이상 지원하지 않아 직접 추가하여야 한다
+src/index.js에서 확인하자
+
+polyfill (폴리필) : 충전솜이라는 의미를 가지며 솜이 꺼졌을때 채워 메꾸는 역할을 한다. 무엇을 메꾸는가?
+브라우저에서 지원하지 않는 코드를 사용가능한 코드 조각이나 플러그인 (추가기능)을 의미한다. 
+*/
