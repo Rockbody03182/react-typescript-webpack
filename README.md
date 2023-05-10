@@ -42,6 +42,6 @@
   ├─ tsconfig.json
   └─ yarn.lock
 ```
-
+### 참고
 웹팩 설정 가이드 : https://yamoo9.gitbook.io/webpack/
 참조 블로그 : https://ryuhojin.tistory.com/19
